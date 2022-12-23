@@ -27,9 +27,9 @@ This will start all of the services Connect depends upon, and finally Connect.
 
 The simplest way to see connect in action is to:
 
-- `npx configure-connect` - Configure the sink connector
+- `npm run configure-connect` - Configure the sink connector
 - `tail -f /tmp/poc.sink.txt` - watch the sink file for changes (in separate terminal)
-- `npx signingresponsev1` - produce a new signing response message to Kafka
+- `npm run rspv1` - produce a new signing response message to Kafka
 
 The above should demonstrate Connect writing data from the topic to the file on disk.  Configuring connect to do the same to database requires more configuration, but is in essence the same.  Note that we configure Avro deserializer in `bin/configureConnect.js`.  We could also write serialized Avro data directly if we want to.  In the case of a database, the deserializer is mandatory.
 
@@ -38,8 +38,8 @@ The above should demonstrate Connect writing data from the topic to the file on 
 To see how the registry interact with our applications, do the following:
 
 - `npm start` - Starts server
-- `npx signingresponsev1` - Produce a v1 response to cluster - server and client will output result
-- `npx signingrepsonsev2` - Produce a v2 response to cluster - server and client will output result
+- `npm run rspv1` - Produce a v1 response to cluster - server and client will output result
+- `npx run rspv2` - Produce a v2 response to cluster - server and client will output result
 
 The application will use the schema registry at startup, and will rely on its local schema thereafter.  Please look in `src/index.js`, as there are quite a few comments explaining what's happening at the application level in this setup.
 

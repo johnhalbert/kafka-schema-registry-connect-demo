@@ -7,8 +7,8 @@
     "start": "node src",
     "configure-connect": "bin/configureConnect.js",
     "req": "bin/request.js",
-    "resv1": "bin/responsev1.js",
-    "resv2": "bin/responsev2.js"
+    "rspv1": "bin/responsev1.js",
+    "rspv2": "bin/responsev2.js"
   },
   "keywords": [],
   "author": "",
